@@ -22,4 +22,4 @@ mongoose.connect('mongodb://localhost/3000')
 app.use(bodyParser.json());
 
 //app.use(defaultRouter);
-app.use('/project/students', userRouter);
+app.use('/project/users', userRouter);

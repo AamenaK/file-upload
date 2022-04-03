@@ -7,13 +7,13 @@ const add = (data) => {
 };
 
 const getUsers = () => {
-    const projection = { __v: 0, _id: 0, password: 0 };
+    const projection = { _email: 0, password: 0 };
     const filter = {};
     return userModel.find(filter, projection);
 }
 
 const getUser = (email) => {
-    return userModel.findOne({ email }, {password: 1, email:1, role: 1, firstName: 1, lastName: 1});
+    return userModel.findOne({ email }, {password: 1, email:1, firstName: 1, lastName: 1});
 }
 
 const deleteUsers = (email) => {
