@@ -62,7 +62,7 @@ const getUsers = async (req, res) => {
 
 const deleteUsers = async (req, res) => {
     try {
-        const email = +req.params.email;
+        const email = req.params.email;
         await userRepository.deleteUsers({email:email});
         res.status(204).send("Successfully Deleted")
     } catch(e) {

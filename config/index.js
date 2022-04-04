@@ -1,5 +1,5 @@
 const config = {
-    dbConStr: "mongodb://127.0.0.1:27017/demoproject"
+    dbConStr: "mongodb://127.0.0.1:27017/project"
 };
 
 module.exports = config;
