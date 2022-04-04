@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require('./routes/userRouter');
-const userCtrl = require('./controllers/userCtrl');
-const userRepository = require('./repositories/userRepository');
-const userModel = require('./models/userModel');
+//const userCtrl = require('./controllers/userCtrl');
+//const userRepository = require('./repositories/userRepository');
+//const userModel = require('./models/userModel');
 const bodyParser = require('body-parser');
 const config = require('./config/index');
 
@@ -14,7 +14,7 @@ app.listen(PORT , () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-mongoose.connect('mongodb://localhost/3000')
+mongoose.connect(config.dbConStr)
     .then(res => console.log('Connected to mongodb'))
     .catch(res => console.log('failed to connect to db'));
 
