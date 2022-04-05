@@ -27,6 +27,9 @@ const schema = mongoose.Schema({
         minLength: [6, 'Max 6 chars'],
         maxLength: [100, 'Max 100 chars'],
         required: [true, 'Password is required']
+    },
+    resume: {
+        type: String
     }
 });
 

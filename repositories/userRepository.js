@@ -20,6 +20,18 @@ const deleteUsers = (email) => {
     return userModel.deleteOne(email);
 }
 
+const update = (email, data) => {
+    const { firstName, lastName, resume } = data;
+    return userModel.updateOne({ email }, {
+        $set: {
+            firstName,
+            lastName,
+            resume,
+            updatedAt: Date.now()
+        }
+    });
+};
+
 module.exports = {
-    add, getUsers, getUser, deleteUsers
+    add, getUsers, getUser, deleteUsers, update
 };

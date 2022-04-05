@@ -72,8 +72,21 @@ const deleteUsers = async (req, res) => {
     }
 };
 
+const update = async (req, res) => {
+    try {
+        const email = req.params.email;
+        req.body.resume = req.resume; // multer
+        await userRepository.update(email, req.body);
+
+        res.status(204);
+        res.send();
+    } catch (e) {
+        console.log(res)
+        res.status(500).send('Internal Server Error');
+    }
+}
 
 
 module.exports = {
-    register, getUsers, deleteUsers, signin, handleErrors
+    register, getUsers, deleteUsers, signin, handleErrors, update
 } 
