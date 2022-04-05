@@ -8,10 +8,10 @@ const bodyParser = require('body-parser');
 const config = require('./config/index');
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
-app.listen(PORT , () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port , () => {
+    console.log(`Server is running on port ${port}`);
 });
 
 mongoose.connect(config.dbConStr)
