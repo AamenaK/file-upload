@@ -18,7 +18,7 @@ mongoose.connect(config.dbConStr)
     .then(res => console.log('Connected to mongodb'))
     .catch(res => console.log('failed to connect to db'));
 
-
+app.use('/uploads', express.static('./uploads'));
 app.use(bodyParser.json());
 
 //app.use(defaultRouter);
